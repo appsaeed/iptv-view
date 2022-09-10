@@ -226,13 +226,13 @@
           });
         },
         onPlay(i, d) {
-          if (i.url.substr(0, 7) === "http://") {
-            this.handleToast(
-              `Sorry, but now it's only support https !`,
-              "error"
-            );
-            return false;
-          }
+          // if (i.url.substr(0, 7) === "http://") {
+          //   this.handleToast(
+          //     `Sorry, but now it's only support https !`,
+          //     "error"
+          //   );
+          //   return false;
+          // }
 
           if (Hls.isSupported()) {
             this.video_show = true;
@@ -277,6 +277,8 @@
                 }
               }
             });
+          }else{
+            this.handleToast('video stream not supported!', 'error')
           }
         },
         onPused(){
